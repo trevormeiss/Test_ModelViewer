@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+List the emotions that you want to react to. 
+    Example: Engaged, Bored, & Frustrated
+Each emotion must have a unigue ID. The IDs must be serial integers starting with 2.
+Each vector must the the unit vector for that emotion.
+    Eample: Engaged had a PAD of (1,1,1). This would be representad as shown below:
+    1 1 1
+-->
+
+<settings>
+
+    <emotion>
+        <name>engaged</name>
+        <id>1</id>
+        <vector>1</vector>
+        <vector>1</vector> 
+        <vector>1</vector>
+    </emotion>
+    
+    <emotion>
+        <name>bored</name>
+        <id>2</id>
+        <vector>-1</vector> 
+        <vector>-1</vector> 
+        <vector>-1</vector>
+    </emotion>    
+    
+    <emotion>
+        <name>frustrated</name>
+        <id>3</id>
+        <vector>-1</vector>
+        <vector>1</vector>
+        <vector>-1</vector>
+    </emotion>  
+    
+    <threshhold>0.0</threshhold>
+    <threshhold>0.2</threshhold>
+    <threshhold>0.4</threshhold>
+    <threshhold>0.6</threshhold>
+    <threshhold>0.8</threshhold>
+    
+</settings>
