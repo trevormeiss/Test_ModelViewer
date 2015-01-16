@@ -39,7 +39,7 @@ import javax.swing.Timer;
  * test
  * @author normenhansen
  */
-public class Main extends SimpleApplication implements ActionListener {
+public class Viewer extends SimpleApplication implements ActionListener {
     
     static String hostName = "localhost";
     static int portNumber = 5555;
@@ -50,6 +50,11 @@ public class Main extends SimpleApplication implements ActionListener {
     static Timer timer;
     double[] vectorPoints = new double[3];
     UnitSphere us = new UnitSphere();
+    
+    public Viewer() {
+        initComponents();
+        timer = new Timer(1000, (ActionListener) this);
+    }
     
     private static JFrame window;
     
@@ -76,7 +81,7 @@ public class Main extends SimpleApplication implements ActionListener {
                 settings.setWidth(640);
                 settings.setHeight(480);
                 
-                Main canvasApplication = new Main();
+                Viewer canvasApplication = new Viewer();
                 canvasApplication.setSettings(settings);
                 canvasApplication.createCanvas(); // create canvas!
                 JmeCanvasContext ctx = (JmeCanvasContext) canvasApplication.getContext();
@@ -90,9 +95,7 @@ public class Main extends SimpleApplication implements ActionListener {
                 JPanel panel = new JPanel(new FlowLayout()); // a panel
                 // add all your Swing components ...
                 JPanel subPanel = new JPanel(new GridLayout(9,1));
-                
-                initComponents();
-                
+                             
                 subPanel.add(openServ);
                 subPanel.add(closeServ);
                 subPanel.add(new JLabel());
@@ -127,8 +130,6 @@ public class Main extends SimpleApplication implements ActionListener {
         jLabel2 = new javax.swing.JLabel();
         openServ = new javax.swing.JButton();
         closeServ = new javax.swing.JButton();
-
-        window.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         modelPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("ModelViewer"));
 
