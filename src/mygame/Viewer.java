@@ -81,6 +81,7 @@ public class Viewer extends SimpleApplication implements ActionListener {
                 settings.setWidth(640);
                 settings.setHeight(480);
                 
+                new padData().setVisible(true);
                 Viewer canvasApplication = new Viewer();
                 canvasApplication.setSettings(settings);
                 canvasApplication.createCanvas(); // create canvas!
@@ -194,15 +195,15 @@ public class Viewer extends SimpleApplication implements ActionListener {
         flyCam.setDragToRotate(true);
         cam.setLocation(new Vector3f(0, 12, 20));
         
-        companion = (Node)assetManager.loadModel("Models/MakeHuman_HeadScratch.j3o");
-        companionControl = companion.getChild("MH_Male_Suit_Game").getControl(AnimControl.class);
+        companion = (Node)assetManager.loadModel("Textures/texturetest2.j3o");
+        //companionControl = companion.getChild("MH_Male_Suit_Game").getControl(AnimControl.class);
         
         // Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         // mat.setColor("Color", ColorRGBA.Blue);
         // test.setMaterial(mat);
         
         rootNode.attachChild(companion);
-        companionChannel = companionControl.createChannel();
+        //companionChannel = companionControl.createChannel();
         //companionChannel.setAnim("MH_Metc-09-scratch-takiguchi");
         
         /* Make the background transparent? */
